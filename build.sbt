@@ -7,6 +7,8 @@ import play.PlayImport.PlayKeys._
 lazy val clients = Seq(exampleClient)
 lazy val scalaV = "2.11.6"
 
+lazy val root = (project in file(".")).aggregate(exampleServer)
+
 lazy val exampleServer = (project in file("example-server")).settings(
   scalaVersion := scalaV,
   routesImport += "config.Routes._",
